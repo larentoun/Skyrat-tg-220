@@ -1,5 +1,6 @@
 import sys
 import json
+import fnmatch
 
 if len(sys.argv) <= 1:
     exit(1)
@@ -11,7 +12,7 @@ for file in sys.argv[1:]:
         try:
             json.load(f)
         except ValueError as exception:
-            if "ss220" in file:
+            if fnmatch.fnmatch(file, 'ss220'):
                 pass
             print("JSON error in {}".format(file))
             print(exception)
