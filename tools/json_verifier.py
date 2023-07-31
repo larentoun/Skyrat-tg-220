@@ -9,6 +9,7 @@ status = 0
 for file in sys.argv[1:]:
     with open(file, encoding="ISO-8859-1") as f:
         try:
+            print("Trying {}".format(file))
             if file.startswith("ss220"):
                 print("SS220 exception detected, passing...")
             else:
