@@ -12,7 +12,7 @@ for file in sys.argv[1:]:
         try:
             json.load(f)
         except ValueError as exception:
-            if fnmatch.fnmatch(file, '[ss220]'):
+            if fnmatch.fnmatch(file, '*ss220*'):
                 pass
             print("JSON error in {}".format(file))
             print(exception)
